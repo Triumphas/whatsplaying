@@ -1,3 +1,4 @@
+import NowPlayingBar from "./NowPlayingBar";
 import { FunctionComponent, useEffect, useState } from "react";
 import { Lyrics, MediaPlayer } from "../store/media-player.type";
 import { AlbumCover } from "./AlbumCover";
@@ -113,6 +114,12 @@ export const MediaDisplay: FunctionComponent<IMediaPlayerProps> = ({ plexamp, is
           <MediaControls plexamp={plexamp} />
         </div>
       )}
+
+	<NowPlayingBar
+	  title={plexamp.metadata?.title}
+	   artist={plexamp.metadata?.grandparentTitle}
+	/>
+
     </div>
   );
 };
